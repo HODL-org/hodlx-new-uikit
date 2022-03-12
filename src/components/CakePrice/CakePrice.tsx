@@ -31,7 +31,7 @@ const StyledImg = styled.img`
 const CakePrice: React.FC<Props> = ({ cakePriceUsd, color = "textSubtle" }) => {
   return cakePriceUsd ? (
     <PriceLink
-      href="https://pancakeswap.finance/swap?outputCurrency=0xbCe2A8350BC759Dc4c9aFDB226a608C17C88d7D9"
+      href="https://hodlx-fams-frontend.vercel.app/swap?outputCurrency=0xbCe2A8350BC759Dc4c9aFDB226a608C17C88d7D9"
       target="_blank"
     >
       {/* <LogoRound width="24px" mr="8px" /> */}
