@@ -8,6 +8,9 @@ const StyledWrapper = styled.div<{ $width: number; $height: number }>`
   max-width: ${({ $width }) => $width}px;
   position: relative;
   width: 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/ring1.png), url(/images/ring2.png), url(/images/ring3.png);
+  background-position: left top, right top 100px, left top 250px;
 
   &:after {
     content: "";
