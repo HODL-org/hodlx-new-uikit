@@ -2261,8 +2261,8 @@ var PriceLink = styled.a(templateObject_1$P || (templateObject_1$P = __makeTempl
 var StyledImg = styled.img(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  width: 24px;\n  margin-right: 8px;\n"], ["\n  width: 24px;\n  margin-right: 8px;\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, _b = _a.color, color = _b === void 0 ? "textSubtle" : _b;
-    return cakePriceUsd ? (React__default.createElement(PriceLink, { href: "https://hodlx-fams-frontend.vercel.app/swap?outputCurrency=0xbCe2A8350BC759Dc4c9aFDB226a608C17C88d7D9", target: "_blank" },
-        React__default.createElement(StyledImg, { src: '/images/tokens/0xbCe2A8350BC759Dc4c9aFDB226a608C17C88d7D9.png' }),
+    return cakePriceUsd ? (React__default.createElement(PriceLink, { href: "https://hodlx-fams-frontend.vercel.app/swap?outputCurrency=0xAeBdbcc7d6821E3924EE5167b4138a43c19Cf681", target: "_blank" },
+        React__default.createElement(StyledImg, { src: '/images/tokens/0xAeBdbcc7d6821E3924EE5167b4138a43c19Cf681.png' }),
         React__default.createElement(Text, { color: color, bold: true }, "$" + cakePriceUsd.toFixed(5)))) : (React__default.createElement(Skeleton, { width: 80, height: 24 }));
 };
 var CakePrice$1 = React__default.memo(CakePrice);
