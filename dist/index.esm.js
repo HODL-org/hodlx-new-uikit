@@ -2263,7 +2263,7 @@ var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, _b = _a.color, color = _b === void 0 ? "textSubtle" : _b;
     return cakePriceUsd ? (React__default.createElement(PriceLink, { href: "https://hodlx.exchange/swap?outputCurrency=0xAeBdbcc7d6821E3924EE5167b4138a43c19Cf681", target: "_blank" },
         React__default.createElement(StyledImg, { src: '/images/tokens/0xAeBdbcc7d6821E3924EE5167b4138a43c19Cf681.png' }),
-        React__default.createElement(Text, { color: color, bold: true }, "$" + cakePriceUsd.toFixed(5)))) : (React__default.createElement(Skeleton, { width: 80, height: 24 }));
+        React__default.createElement(Text, { color: color, bold: true }, "$" + cakePriceUsd.toFixed(8)))) : (React__default.createElement(Skeleton, { width: 80, height: 24 }));
 };
 var CakePrice$1 = React__default.memo(CakePrice);
 var templateObject_1$P, templateObject_2$r;
