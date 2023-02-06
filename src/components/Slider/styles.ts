@@ -1,8 +1,8 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
-import bunnyHeadMain from "./svg/bunnyhead-main.svg";
-import bunnyHeadMax from "./svg/bunnyhead-max.svg";
+import bunnyHeadMain from "./svg/hodl-hand-icon.svg";
+import bunnyHeadMax from "./svg/hodl-hand-icon.svg";
 import bunnyButt from "./svg/bunnybutt.svg";
 
 interface SliderLabelProps {
