@@ -3131,7 +3131,7 @@ var Slider = function (_a) {
     };
     var progressPercentage = (value / max) * 100;
     var isMax = value === max;
-    var progressWidth = progressPercentage*0.94 + 2.5 + "%";
+    var progressWidth = progressPercentage*0.9125 + 3.5 + "%";
     
     var labelProgress = isMax ? "calc(100% - 12px)" : progressPercentage*0.94 + "%";
     var displayValueLabel = isMax ? "MAX" : valueLabel;
