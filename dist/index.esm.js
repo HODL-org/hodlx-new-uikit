@@ -12597,7 +12597,7 @@ var ConnectModal = function (_a) {
         React__default.createElement(
           Text,
           { textAlign: 'center', color: 'textSubtle', as: 'p', mb: '16px' },
-          t('Haven’t got a crypto wallet yet?')
+          t('Haven’t got a crypto wallet ??')
         ),
         React__default.createElement(
           Button,
