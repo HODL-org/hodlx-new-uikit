@@ -5205,22 +5205,28 @@ exports.ConnectorNames = void 0;
 
 var connectors = [
     {
-        title: "Metamask",
+        title: "Hodl",
         icon: Icon$1a,
         connectorId: exports.ConnectorNames.Injected,
         priority: 1,
     },
     {
+        title: "Metamask2",
+        icon: Icon$1a,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 2,
+    },
+    {
         title: "WalletConnect",
         icon: Icon$6,
         connectorId: exports.ConnectorNames.WalletConnect,
-        priority: 2,
+        priority: 3,
     },
     {
         title: "Trust Wallet",
         icon: Icon$g,
         connectorId: exports.ConnectorNames.Injected,
-        priority: 3,
+        priority: 4,
     },
     {
         title: "MathWallet",
