@@ -1,4 +1,2 @@
-import { DefaultTheme } from "styled-components";
-import { InputProps } from "./types";
-declare const Input: import("styled-components").StyledComponent<"input", DefaultTheme, InputProps, never>;
+declare const Input: any;
 export default Input;

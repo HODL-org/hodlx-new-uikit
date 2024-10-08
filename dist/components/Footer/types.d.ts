@@ -1,6 +1,6 @@
 import { Language } from "../LangSelector/types";
 import { FlexProps } from "../Box";
-export declare type FooterLinkType = {
+export type FooterLinkType = {
     label: string;
     items: {
         label: string;
@@ -8,7 +8,7 @@ export declare type FooterLinkType = {
         isHighlighted?: boolean;
     }[];
 };
-export declare type FooterProps = {
+export type FooterProps = {
     items: FooterLinkType[];
     buyCakeLabel: string;
     isDark: boolean;

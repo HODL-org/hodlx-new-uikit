@@ -1,2 +1,2 @@
-declare const ResetCSS: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
+declare const ResetCSS: any;
 export default ResetCSS;

@@ -1,11 +1,11 @@
-export declare type EventStatus = "past" | "live" | "upcoming";
-export declare type Event = {
+export type EventStatus = "past" | "live" | "upcoming";
+export type Event = {
     status: EventStatus;
     text: string;
     altText?: string;
     infoText?: string;
 };
-export declare type TimelineProps = {
+export type TimelineProps = {
     events: Event[];
     useDark?: boolean;
 };
