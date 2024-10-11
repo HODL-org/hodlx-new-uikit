@@ -25,4 +25,4 @@ export declare const columns: ({
     label?: undefined;
     render?: undefined;
 })[];
-export declare const data: never[];
+export declare const data: any[];

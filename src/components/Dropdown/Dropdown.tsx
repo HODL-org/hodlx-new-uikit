@@ -1,19 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import { DropdownProps, PositionProps, Position } from "./types";
+import React from 'react';
+import styled from 'styled-components';
+import { DropdownProps, PositionProps, Position } from './types';
 
 const getLeft = ({ position }: PositionProps) => {
-  if (position === "top-right") {
-    return "100%";
+  if (position === 'top-right') {
+    return '100%';
   }
-  return "50%";
+  return '50%';
 };
 
 const getBottom = ({ position }: PositionProps) => {
-  if (position === "top" || position === "top-right") {
-    return "100%";
+  if (position === 'top' || position === 'top-right') {
+    return '100%';
   }
-  return "auto";
+  return 'auto';
 };
 
 const DropdownContent = styled.div<{ position: Position }>`
@@ -40,16 +40,22 @@ const Container = styled.div`
   }
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", children }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  target,
+  position = 'bottom',
+  children,
+}) => {
   return (
     <Container>
       {target}
-      <DropdownContent position={position}>{children}</DropdownContent>
+      <DropdownContent position={position}>
+        <>{children}</>
+      </DropdownContent>
     </Container>
   );
 };
 Dropdown.defaultProps = {
-  position: "bottom",
+  position: 'bottom',
 };
 
 export default Dropdown;

@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import Flex from "../Box/Flex";
-import Box from "../Box/Box";
-import { StatusProps, StepProps } from "./types";
+import React from 'react';
+import styled from 'styled-components';
+import Flex from '../Box/Flex';
+import Box from '../Box/Box';
+import { StatusProps, StepProps } from './types';
 
 const getStepNumberFontColor = ({ theme, status }: StatusProps) => {
-  if (status === "past") {
+  if (status === 'past') {
     return theme.colors.success;
   }
-  if (status === "current") {
+  if (status === 'current') {
     return theme.colors.invertedContrast;
   }
   return theme.colors.textDisabled;
@@ -25,18 +25,20 @@ const Connector = styled.div<StatusProps>`
   width: 4px;
   height: calc(50% + 20px);
   ${({ $isFirstStep, $isLastStep, $isFirstPart }) => {
-    if ($isFirstStep) return "top: 50%;";
-    if ($isLastStep) return "top: 0;";
-    return $isFirstPart ? "top:0;" : "top:50%;";
+    if ($isFirstStep) return 'top: 50%;';
+    if ($isLastStep) return 'top: 0;';
+    return $isFirstPart ? 'top:0;' : 'top:50%;';
   }}
   left: calc(50% - 2px);
   background-color: ${({ theme, status }) =>
-    theme.colors[status === "past" || status === "current" ? "success" : "textDisabled"]};
+    theme.colors[
+      status === 'past' || status === 'current' ? 'success' : 'textDisabled'
+    ]};
 `;
 
 const ChildrenWrapper = styled(Box)<{ isVisible: boolean }>`
   ${({ theme }) => theme.mediaQueries.md} {
-    visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
+    visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
   }
 `;
 
@@ -63,8 +65,11 @@ const Wrapper = styled.div`
 
 export const StepNumber = styled.div<StatusProps>`
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
-  background-color: ${({ theme, status }) => theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
-  border: 2px solid ${({ theme, status }) => (status === "past" ? theme.colors.success : "transparent")};
+  background-color: ${({ theme, status }) =>
+    theme.colors[status === 'current' ? 'secondary' : 'invertedContrast']};
+  border: 2px solid
+    ${({ theme, status }) =>
+      status === 'past' ? theme.colors.success : 'transparent'};
   border-radius: ${({ theme }) => theme.radii.circle};
   color: ${getStepNumberFontColor};
   display: flex;
@@ -97,14 +102,29 @@ export const Step: React.FC<StepProps> = ({
   const isFirst = index === 0;
   const isLast = index === numberOfSteps - 1;
   return (
-    <StyledStep mb={index < numberOfSteps - 1 ? "16px" : 0}>
-      <ChildrenLeftWrapper isVisible={!isIndexPair}>{children}</ChildrenLeftWrapper>
+    <StyledStep mb={index < numberOfSteps - 1 ? '16px' : 0}>
+      <ChildrenLeftWrapper isVisible={!isIndexPair}>
+        <>{children}</>
+      </ChildrenLeftWrapper>
       <Wrapper>
         <StepNumber status={statusFirstPart}>{index + 1}</StepNumber>
-        <Connector $isFirstStep={isFirst} $isLastStep={isLast} status={statusFirstPart} $isFirstPart />
-        {!isFirst && !isLast && <Connector $isFirstStep={isFirst} $isLastStep={isLast} status={statusSecondPart} />}
+        <Connector
+          $isFirstStep={isFirst}
+          $isLastStep={isLast}
+          status={statusFirstPart}
+          $isFirstPart
+        />
+        {!isFirst && !isLast && (
+          <Connector
+            $isFirstStep={isFirst}
+            $isLastStep={isLast}
+            status={statusSecondPart}
+          />
+        )}
       </Wrapper>
-      <ChildrenRightWrapper isVisible={isIndexPair}>{children}</ChildrenRightWrapper>
+      <ChildrenRightWrapper isVisible={isIndexPair}>
+        <>{children}</>
+      </ChildrenRightWrapper>
     </StyledStep>
   );
 };

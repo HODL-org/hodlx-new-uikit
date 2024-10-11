@@ -1,13 +1,18 @@
-import React from "react";
-import { Flex, Box } from "../Box";
-import { SwapVertIcon } from "../Svg";
-import Text from "../Text/Text";
-import { StyledBalanceInput, StyledInput, UnitContainer, SwitchUnitsButton } from "./styles";
-import { BalanceInputProps } from "./types";
+import React from 'react';
+import { Flex, Box } from '../Box';
+import { SwapVertIcon } from '../Svg';
+import Text from '../Text/Text';
+import {
+  StyledBalanceInput,
+  StyledInput,
+  UnitContainer,
+  SwitchUnitsButton,
+} from './styles';
+import { BalanceInputProps } from './types';
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
   value,
-  placeholder = "0.0",
+  placeholder = '0.0',
   onUserInput,
   currencyValue,
   inputProps,
@@ -20,7 +25,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
-      onUserInput(e.currentTarget.value.replace(/,/g, "."));
+      onUserInput(e.currentTarget.value.replace(/,/g, '.'));
     }
   };
 
@@ -38,18 +43,28 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
               placeholder={placeholder}
               ref={innerRef}
               {...inputProps}
-            />
-            {unit && <UnitContainer>{unit}</UnitContainer>}
+            >
+              <></>
+            </StyledInput>
+            {unit && (
+              <UnitContainer>
+                <>{unit}</>
+              </UnitContainer>
+            )}
           </Flex>
           {currencyValue && (
             <Text fontSize="12px" textAlign="right" color="textSubtle">
-              {currencyValue}
+              <>{currencyValue}</>
             </Text>
           )}
         </Box>
         {switchEditingUnits && (
           <Flex alignItems="center" pl="12px">
-            <SwitchUnitsButton scale="sm" variant="text" onClick={switchEditingUnits}>
+            <SwitchUnitsButton
+              scale="sm"
+              variant="text"
+              onClick={switchEditingUnits}
+            >
               <SwapVertIcon color="textSubtle" />
             </SwitchUnitsButton>
           </Flex>

@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
-import { usePopper } from "react-popper";
-import { ClickableElementContainer } from "./styles";
-import { BaseMenuProps } from "./types";
-import getPortalRoot from "../../util/getPortalRoot";
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { usePopper } from 'react-popper';
+import { ClickableElementContainer } from './styles';
+import { BaseMenuProps } from './types';
+import getPortalRoot from '../../util/getPortalRoot';
 
-const BaseMenu: React.FC<BaseMenuProps> = ({ component, options, children, isOpen = false }) => {
+const BaseMenu: React.FC<BaseMenuProps> = ({
+  component,
+  options,
+  children,
+  isOpen = false,
+}) => {
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [menuElement, setMenuElement] = useState<HTMLElement | null>(null);
-  const placement = options?.placement ?? "bottom";
+  const placement = options?.placement ?? 'bottom';
   const offset = options?.offset ?? [0, 10];
   const padding = options?.padding ?? { left: 16, right: 16 };
 
@@ -45,24 +50,26 @@ const BaseMenu: React.FC<BaseMenuProps> = ({ component, options, children, isOpe
       }
     };
     if (menuElement !== null) {
-      document.addEventListener("click", handleClickOutside);
+      document.addEventListener('click', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [menuElement, targetElement]);
 
   const { styles, attributes } = usePopper(targetElement, menuElement, {
     placement,
     modifiers: [
-      { name: "offset", options: { offset } },
-      { name: "preventOverflow", options: { padding } },
+      { name: 'offset', options: { offset } },
+      { name: 'preventOverflow', options: { padding } },
     ],
   });
 
   const menu = (
     <div ref={setMenuElement} style={styles.popper} {...attributes.popper}>
-      {typeof children === "function" ? children({ toggle, open, close }) : children}
+      {typeof children === 'function'
+        ? children({ toggle, open, close })
+        : children}
     </div>
   );
 
@@ -72,7 +79,7 @@ const BaseMenu: React.FC<BaseMenuProps> = ({ component, options, children, isOpe
   return (
     <>
       <ClickableElementContainer ref={setTargetElement} onClick={toggle}>
-        {component}
+        <>{component}</>
       </ClickableElementContainer>
       {isMenuOpen && renderMenu}
     </>

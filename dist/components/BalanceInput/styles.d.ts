@@ -5,5 +5,5 @@ export declare const StyledBalanceInput: import("styled-components").StyledCompo
     isWarning: BalanceInputProps["isWarning"];
 }, never>;
 export declare const StyledInput: import("styled-components").StyledComponent<"input", import("styled-components").DefaultTheme, import("../Input").InputProps & {
-    textAlign?: string | undefined;
+    textAlign?: string;
 }, never>;

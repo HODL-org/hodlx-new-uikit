@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { BrowserRouter } from "react-router-dom";
-import { Flex } from "../Box";
-import MenuItem from "./MenuItem";
-import { MenuItemProps } from "./types";
+import { BrowserRouter } from 'react-router-dom';
+import { Flex } from '../Box';
+import MenuItem from './MenuItem';
+import { MenuItemProps } from './types';
 
 export default {
-  title: "Components/Menu/MenuItem",
+  title: 'Components/Menu/MenuItem',
   component: MenuItem,
 };
 
@@ -14,7 +14,9 @@ const Template: React.FC<MenuItemProps> = ({ children, ...args }) => {
   return (
     <BrowserRouter>
       <Flex>
-        <MenuItem {...args}>{children}</MenuItem>
+        <MenuItem {...args}>
+          <>{children}</>
+        </MenuItem>
       </Flex>
     </BrowserRouter>
   );
@@ -23,7 +25,7 @@ const Template: React.FC<MenuItemProps> = ({ children, ...args }) => {
 export const Default = Template.bind({});
 Default.args = {
   isActive: false,
-  href: "/",
-  children: "Trade",
-  variant: "default",
+  href: '/',
+  children: 'Trade',
+  variant: 'default',
 };

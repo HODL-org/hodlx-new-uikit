@@ -1,6 +1,6 @@
-import React from "react";
-import { ButtonProps } from "../../components/Button";
-import { Login, Config } from "./types";
+import React from 'react';
+import { ButtonProps } from '../../components/Button';
+import { Login, Config } from './types';
 interface Props {
     walletConfig: Config;
     login: Login;

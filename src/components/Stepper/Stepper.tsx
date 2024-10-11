@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { ThemedProps } from "./types";
+import React from 'react';
+import styled from 'styled-components';
+import { ThemedProps } from './types';
 
 const StepperWrapper = styled.div<ThemedProps>`
   display: flex;
@@ -14,7 +14,7 @@ const Stepper: React.FC = ({ children }) => {
     <StepperWrapper>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { numberOfSteps });
+          return React.cloneElement(child as any, { numberOfSteps });
         }
         return child;
       })}

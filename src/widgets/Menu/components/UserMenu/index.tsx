@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { usePopper } from "react-popper";
-import styled from "styled-components";
-import { Box, Flex } from "../../../../components/Box";
-import { ChevronDownIcon } from "../../../../components/Svg";
-import { UserMenuProps, variants } from "./types";
-import MenuIcon from "./MenuIcon";
-import { UserMenuItem } from "./styles";
+import React, { useEffect, useState } from 'react';
+import { usePopper } from 'react-popper';
+import styled from 'styled-components';
+import { Box, Flex } from '../../../../components/Box';
+import { ChevronDownIcon } from '../../../../components/Svg';
+import { UserMenuProps, variants } from './types';
+import MenuIcon from './MenuIcon';
+import { UserMenuItem } from './styles';
 
 export const StyledUserMenu = styled(Flex)`
   align-items: center;
@@ -74,11 +74,13 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
-  const accountEllipsis = account ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}` : null;
+  const accountEllipsis = account
+    ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
+    : null;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
-    strategy: "fixed",
-    placement: "bottom-end",
-    modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
+    strategy: 'fixed',
+    placement: 'bottom-end',
+    modifiers: [{ name: 'offset', options: { offset: [0, 0] } }],
   });
 
   useEffect(() => {
@@ -94,12 +96,12 @@ const UserMenu: React.FC<UserMenuProps> = ({
       }
     };
 
-    targetRef?.addEventListener("mouseenter", showDropdownMenu);
-    targetRef?.addEventListener("mouseleave", hideDropdownMenu);
+    targetRef?.addEventListener('mouseenter', showDropdownMenu);
+    targetRef?.addEventListener('mouseleave', hideDropdownMenu);
 
     return () => {
-      targetRef?.removeEventListener("mouseenter", showDropdownMenu);
-      targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
+      targetRef?.removeEventListener('mouseenter', showDropdownMenu);
+      targetRef?.removeEventListener('mouseleave', hideDropdownMenu);
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
@@ -114,8 +116,15 @@ const UserMenu: React.FC<UserMenuProps> = ({
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
         <ChevronDownIcon color="text" width="24px" />
       </StyledUserMenu>
-      <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
-        <Box onClick={() => setIsOpen(false)}>{children}</Box>
+      <Menu
+        style={styles.popper}
+        ref={setTooltipRef}
+        {...attributes.popper}
+        isOpen={isOpen}
+      >
+        <Box onClick={() => setIsOpen(false)}>
+          <>{children}</>
+        </Box>
       </Menu>
     </Flex>
   );

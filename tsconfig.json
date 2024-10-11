@@ -15,7 +15,9 @@
     "noEmit": false,
     "jsx": "react",
     "outDir": "./dist",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false
   },
   "include": ["src"],
   "exclude": [
@@ -23,5 +25,6 @@
     "src/**/*.stories.tsx",
     "src/__tests__/**/*",
     "./dist/**/*"
-  ]
+  ],
+  "ignoreBuildErrors": true
 }

@@ -4,5 +4,5 @@ interface ThemedProps extends TagProps {
     theme: DefaultTheme;
 }
 export declare const StyledTag: import("styled-components").StyledComponent<"div", DefaultTheme, ThemedProps, never>;
-declare const _default: null;
+declare const _default: any;
 export default _default;

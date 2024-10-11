@@ -1,5 +1,5 @@
-import React from "react";
-import { Handler } from "./types";
+import React from 'react';
+import { Handler } from './types';
 interface ModalsContext {
     isOpen: boolean;
     nodeId: string;

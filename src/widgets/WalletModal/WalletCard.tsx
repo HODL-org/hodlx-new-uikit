@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "../../components/Button/Button";
-import Text from "../../components/Text/Text";
-import MoreHorizontal from "../../components/Svg/Icons/MoreHorizontal";
-import { ButtonProps } from "../../components/Button";
-import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
-import { Login, Config, ConnectorNames } from "./types";
+import React from 'react';
+import styled from 'styled-components';
+import Button from '../../components/Button/Button';
+import Text from '../../components/Text/Text';
+import MoreHorizontal from '../../components/Svg/Icons/MoreHorizontal';
+import { ButtonProps } from '../../components/Button';
+import { connectorLocalStorageKey, walletLocalStorageKey } from './config';
+import { Login, Config, ConnectorNames } from './types';
 
 interface Props {
   walletConfig: Config;
@@ -13,7 +13,11 @@ interface Props {
   onDismiss: () => void;
 }
 
-const WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: "16px" })`
+const WalletButton = styled(Button).attrs({
+  width: '100%',
+  variant: 'text',
+  py: '16px',
+})`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -27,11 +31,14 @@ interface MoreWalletCardProps extends ButtonProps {
   t: (key: string) => string;
 }
 
-export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({ t, ...props }) => {
+export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({
+  t,
+  ...props
+}) => {
   return (
     <WalletButton variant="tertiary" {...props}>
       <MoreHorizontal width="40px" mb="8px" color="textSubtle" />
-      <Text fontSize="14px">{t("More")}</Text>
+      <Text fontSize="14px">{t('More')}</Text>
     </WalletButton>
   );
 };
@@ -43,17 +50,22 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
     <WalletButton
       variant="tertiary"
       onClick={() => {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isIOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+          !(window as any).MSStream;
 
         // Since iOS does not support Trust Wallet we fall back to WalletConnect
-        if (walletConfig.title === "Trust Wallet" && isIOS) {
+        if (walletConfig.title === 'Trust Wallet' && isIOS) {
           login(ConnectorNames.WalletConnect);
         } else {
           login(walletConfig.connectorId);
         }
 
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-        localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+        localStorage.setItem(
+          connectorLocalStorageKey,
+          walletConfig.connectorId
+        );
         onDismiss();
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}

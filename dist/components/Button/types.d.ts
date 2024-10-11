@@ -16,8 +16,8 @@ export declare const variants: {
     readonly SUCCESS: "success";
     readonly LIGHT: "light";
 };
-export declare type Scale = typeof scales[keyof typeof scales];
-export declare type Variant = typeof variants[keyof typeof variants];
+export type Scale = typeof scales[keyof typeof scales];
+export type Variant = typeof variants[keyof typeof variants];
 export interface BaseButtonProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;
     external?: boolean;
@@ -28,4 +28,4 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     startIcon?: ReactNode;
     endIcon?: ReactNode;
 }
-export declare type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;
+export type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;

@@ -1,7 +1,7 @@
-import React from "react";
-import Text from "../Text/Text";
-import { StyledBalanceInput, StyledInput } from "./styles";
-import { TextfieldProps } from "./types";
+import React from 'react';
+import Text from '../Text/Text';
+import { StyledBalanceInput, StyledInput } from './styles';
+import { TextfieldProps } from './types';
 
 const Textfield: React.FC<TextfieldProps> = ({
   label,
@@ -17,8 +17,18 @@ const Textfield: React.FC<TextfieldProps> = ({
 
   return (
     <StyledBalanceInput isWarning={isWarning}>
-      <Text fontSize="14px">{label}</Text>
-      <StyledInput value={value} onChange={handleOnChange} placeholder={placeholder} textAlign="left" {...inputProps} />
+      <Text fontSize="14px">
+        <>{label}</>
+      </Text>
+      <StyledInput
+        value={value}
+        onChange={handleOnChange}
+        placeholder={placeholder}
+        textAlign="left"
+        {...inputProps}
+      >
+        <></>
+      </StyledInput>
     </StyledBalanceInput>
   );
 };
