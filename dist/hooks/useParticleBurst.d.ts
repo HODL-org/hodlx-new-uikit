@@ -1,8 +1,8 @@
-type ParticleOptions = {
+declare type ParticleOptions = {
     size?: number;
     distance?: number;
 };
-type Options = {
+declare type Options = {
     imgSrc: string;
     selector?: string;
     numberOfParticles?: number;

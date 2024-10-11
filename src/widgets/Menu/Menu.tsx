@@ -8,6 +8,7 @@ import Footer from '../../components/Footer';
 import MenuItems from '../../components/MenuItems/MenuItems';
 import { SubMenuItems } from '../../components/SubMenuItems';
 import { useMatchBreakpoints } from '../../hooks';
+import CakePrice from '../../components/CakePrice/CakePrice';
 import Logo from './components/Logo';
 import {
   MENU_HEIGHT,
@@ -16,6 +17,7 @@ import {
   TOP_BANNER_HEIGHT_MOBILE,
 } from './config';
 import { NavProps } from './types';
+import LangSelector from '../../components/LangSelector/LangSelector';
 import { MenuContext } from './context';
 
 const Wrapper = styled.div`

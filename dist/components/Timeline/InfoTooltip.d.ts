@@ -1,6 +1,6 @@
 import React from "react";
 import { BoxProps } from "../Box";
-type InfoTooltip = {
+declare type InfoTooltip = {
     text: string;
     iconColor?: string;
 } & BoxProps;

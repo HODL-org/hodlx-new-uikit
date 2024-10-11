@@ -1,6 +1,6 @@
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
-export type MenuItemsType = {
+export declare type MenuItemsType = {
     label: string;
     href: string;
     icon?: string;

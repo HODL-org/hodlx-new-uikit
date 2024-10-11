@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Colors } from "../../theme/types";
 export interface NotificationDotProps {
     show?: boolean;

@@ -1,5 +1,5 @@
-export type Breakpoints = string[];
-export type MediaQueries = {
+export declare type Breakpoints = string[];
+export declare type MediaQueries = {
     xs: string;
     sm: string;
     md: string;
@@ -8,14 +8,14 @@ export type MediaQueries = {
     xxl: string;
     nav: string;
 };
-export type Spacing = number[];
-export type Radii = {
+export declare type Spacing = number[];
+export declare type Radii = {
     small: string;
     default: string;
     card: string;
     circle: string;
 };
-export type Shadows = {
+export declare type Shadows = {
     level1: string;
     active: string;
     success: string;
@@ -24,7 +24,7 @@ export type Shadows = {
     inset: string;
     tooltip: string;
 };
-export type Gradients = {
+export declare type Gradients = {
     bubblegum: string;
     inverseBubblegum: string;
     cardHeader: string;
@@ -33,7 +33,7 @@ export type Gradients = {
     violetAlt: string;
     gold: string;
 };
-export type Colors = {
+export declare type Colors = {
     primary: string;
     primaryBright: string;
     primaryDark: string;
@@ -64,7 +64,7 @@ export type Colors = {
     silver: string;
     bronze: string;
 };
-export type ZIndices = {
+export declare type ZIndices = {
     dropdown: number;
     modal: number;
 };
