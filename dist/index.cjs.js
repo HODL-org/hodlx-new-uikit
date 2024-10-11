@@ -30731,7 +30731,7 @@ var StyledTag = styled__default["default"].div(templateObject_1$g || (templateOb
 var templateObject_1$g;
 
 var Tag = function (_a) {
-    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
+    _a.variant; _a.scale; _a.outline; var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["variant", "scale", "outline", "startIcon", "endIcon", "children"]);
     return (React__default["default"].createElement(StyledTag, __assign({}, props),
         React__default["default"].isValidElement(startIcon) &&
             React__default["default"].cloneElement(startIcon, {
