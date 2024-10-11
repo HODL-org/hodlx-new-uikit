@@ -30731,7 +30731,7 @@ var StyledTag = styled__default["default"].div(templateObject_1$g || (templateOb
 var templateObject_1$g;
 
 var Tag = function (_a) {
-    _a.variant; _a.scale; _a.outline; var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["variant", "scale", "outline", "startIcon", "endIcon", "children"]);
+    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
     return (React__default["default"].createElement(StyledTag, __assign({}, props),
         React__default["default"].isValidElement(startIcon) &&
             React__default["default"].cloneElement(startIcon, {
@@ -30742,6 +30742,14 @@ var Tag = function (_a) {
             React__default["default"].cloneElement(endIcon, {
                 ml: '0.5em',
             })));
+};
+Tag.defaultProps = {
+    // eslint-disable-next-line react/default-props-match-prop-types
+    variant: 'primary',
+    // eslint-disable-next-line react/default-props-match-prop-types
+    scale: scales.MD,
+    // eslint-disable-next-line react/default-props-match-prop-types
+    outline: false,
 };
 
 var isTouchDevice = function () {
