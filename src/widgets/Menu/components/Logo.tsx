@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import styled, { keyframes } from "styled-components";
-import Flex from "../../../components/Box/Flex";
-import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
-import { MenuContext } from "../context";
+import React, { useContext } from 'react';
+import styled, { keyframes } from 'styled-components';
+import Flex from '../../../components/Box/Flex';
+import { LogoIcon, LogoWithTextIcon } from '../../../components/Svg';
+import { MenuContext } from '../context';
 
 interface Props {
   isDark: boolean;
@@ -14,7 +14,7 @@ const blink = keyframes`
   50% { transform:  scaleY(0.1); }
 `;
 
-const StyledLink = styled("a")`
+const StyledLink = styled('a')`
   display: flex;
   align-items: center;
   .mobile-icon {
@@ -50,11 +50,17 @@ const StyledLogoWithTextIcon = styled.img`
 
 const Logo: React.FC<Props> = ({ isDark, href }) => {
   const { linkComponent } = useContext(MenuContext);
-  const isAbsoluteUrl = href.startsWith("http");
+  const isAbsoluteUrl = href.startsWith('http');
   const innerLogo = (
     <>
-      <StyledLogoWithTextIcon className="mobile-icon" src="/images/logoWithText.png"/>
-      <StyledLogoWithTextIcon className="desktop-icon" src="/images/logoWithText.png"/>
+      <StyledLogoWithTextIcon
+        className="mobile-icon"
+        src="/images/logoHODL.png"
+      />
+      <StyledLogoWithTextIcon
+        className="desktop-icon"
+        src="/images/logoHODL.png"
+      />
     </>
   );
 
@@ -65,7 +71,11 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink href={href} as={linkComponent} aria-label="Pancake home page">
+        <StyledLink
+          href={href}
+          as={linkComponent}
+          aria-label="Pancake home page"
+        >
           {innerLogo}
         </StyledLink>
       )}

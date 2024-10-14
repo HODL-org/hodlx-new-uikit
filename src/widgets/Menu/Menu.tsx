@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import BottomNav from '../../components/BottomNav';
 import { Box } from '../../components/Box';
 import Flex from '../../components/Box/Flex';
-import Footer from '../../components/Footer';
 import MenuItems from '../../components/MenuItems/MenuItems';
 import { SubMenuItems } from '../../components/SubMenuItems';
 import { useMatchBreakpoints } from '../../hooks';
@@ -70,12 +69,9 @@ const Menu: React.FC<NavProps> = ({
   linkComponent = 'a',
   userMenu,
   banner,
-  globalMenu,
   isDark,
-  toggleTheme,
   links,
   subLinks,
-  footerLinks,
   activeItem,
   activeSubItem,
   children,
