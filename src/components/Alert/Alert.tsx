@@ -87,13 +87,9 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
       <Details hasHandler={!!onClick}>
         <Text bold>{title}</Text>
         {typeof children === 'string' ? (
-          <Text as="p">
-            <>
-              <>{children}</>
-            </>
-          </Text>
+          <Text as="p">{children}</Text>
         ) : (
-          <>children</>
+          children
         )}
       </Details>
       {onClick && (

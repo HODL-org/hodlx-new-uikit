@@ -104,7 +104,7 @@ export const Step: React.FC<StepProps> = ({
   return (
     <StyledStep mb={index < numberOfSteps - 1 ? '16px' : 0}>
       <ChildrenLeftWrapper isVisible={!isIndexPair}>
-        <>{children}</>
+        {children}
       </ChildrenLeftWrapper>
       <Wrapper>
         <StepNumber status={statusFirstPart}>{index + 1}</StepNumber>
@@ -123,7 +123,7 @@ export const Step: React.FC<StepProps> = ({
         )}
       </Wrapper>
       <ChildrenRightWrapper isVisible={isIndexPair}>
-        <>{children}</>
+        {children}
       </ChildrenRightWrapper>
     </StyledStep>
   );

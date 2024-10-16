@@ -43,18 +43,12 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
               placeholder={placeholder}
               ref={innerRef}
               {...inputProps}
-            >
-              <></>
-            </StyledInput>
-            {unit && (
-              <UnitContainer>
-                <>{unit}</>
-              </UnitContainer>
-            )}
+            />
+            {unit && <UnitContainer>{unit}</UnitContainer>}
           </Flex>
           {currencyValue && (
             <Text fontSize="12px" textAlign="right" color="textSubtle">
-              <>{currencyValue}</>
+              {currencyValue}
             </Text>
           )}
         </Box>

@@ -122,9 +122,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         {...attributes.popper}
         isOpen={isOpen}
       >
-        <Box onClick={() => setIsOpen(false)}>
-          <>{children}</>
-        </Box>
+        <Box onClick={() => setIsOpen(false)}>{children}</Box>
       </Menu>
     </Flex>
   );

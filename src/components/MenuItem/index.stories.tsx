@@ -14,9 +14,7 @@ const Template: React.FC<MenuItemProps> = ({ children, ...args }) => {
   return (
     <BrowserRouter>
       <Flex>
-        <MenuItem {...args}>
-          <>{children}</>
-        </MenuItem>
+        <MenuItem {...args}>{children}</MenuItem>
       </Flex>
     </BrowserRouter>
   );

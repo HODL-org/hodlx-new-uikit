@@ -33,9 +33,7 @@ export const Overlay: FC<BoxProps> = (props) => {
   return (
     <>
       <BodyLock />
-      <StyledOverlay role="presentation" {...props}>
-        <></>
-      </StyledOverlay>
+      <StyledOverlay role="presentation" {...props} />
     </>
   );
 };

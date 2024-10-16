@@ -79,7 +79,7 @@ const BaseMenu: React.FC<BaseMenuProps> = ({
   return (
     <>
       <ClickableElementContainer ref={setTargetElement} onClick={toggle}>
-        <>{component}</>
+        {component}
       </ClickableElementContainer>
       {isMenuOpen && renderMenu}
     </>

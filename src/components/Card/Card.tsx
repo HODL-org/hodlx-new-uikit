@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({
         hasCustomBorder={!!props.borderBackground}
       >
         {ribbon}
-        <>{children}</>
+        {children}
       </StyledCardInner>
     </StyledCard>
   );

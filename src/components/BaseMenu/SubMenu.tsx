@@ -13,9 +13,7 @@ const SubMenu: React.FC<BaseMenuProps & FlexProps> = ({
 }) => {
   return (
     <BaseMenu component={component} options={options} isOpen={isOpen}>
-      <SubMenuContainer {...props}>
-        <>{children}</>
-      </SubMenuContainer>
+      <SubMenuContainer {...props}>{children}</SubMenuContainer>
     </BaseMenu>
   );
 };

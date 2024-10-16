@@ -1640,7 +1640,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
 var ExpandableButton = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
     return (React__default["default"].createElement(IconButton, { "aria-label": "Hide or show expandable content", onClick: onClick },
-        React__default["default"].createElement(React__default["default"].Fragment, null, children),
+        children,
         expanded ? (React__default["default"].createElement(Icon$1Q, { color: "invertedContrast" })) : (React__default["default"].createElement(Icon$1T, { color: "invertedContrast" }))));
 };
 ExpandableButton.defaultProps = {
@@ -1648,8 +1648,7 @@ ExpandableButton.defaultProps = {
 };
 var ExpandableLabel = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
-    return (React__default["default"].createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React__default["default"].createElement(Icon$1Q, { color: "primary" })) : (React__default["default"].createElement(Icon$1T, { color: "primary" })) },
-        React__default["default"].createElement(React__default["default"].Fragment, null, children)));
+    return (React__default["default"].createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React__default["default"].createElement(Icon$1Q, { color: "primary" })) : (React__default["default"].createElement(Icon$1T, { color: "primary" })) }, children));
 };
 ExpandableLabel.defaultProps = {
     expanded: false,
@@ -1718,9 +1717,7 @@ var Alert = function (_a) {
             React__default["default"].createElement(Icon, { color: "currentColor", width: "24px" })),
         React__default["default"].createElement(Details, { hasHandler: !!onClick },
             React__default["default"].createElement(Text, { bold: true }, title),
-            typeof children === 'string' ? (React__default["default"].createElement(Text, { as: "p" },
-                React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement(React__default["default"].Fragment, null, children)))) : (React__default["default"].createElement(React__default["default"].Fragment, null, "children"))),
+            typeof children === 'string' ? (React__default["default"].createElement(Text, { as: "p" }, children)) : (children)),
         onClick && (React__default["default"].createElement(CloseHandler, null,
             React__default["default"].createElement(IconButton, { scale: "sm", variant: "text", onClick: onClick },
                 React__default["default"].createElement(Icon$1O, { width: "24px", color: "currentColor" }))))));
@@ -1825,12 +1822,9 @@ var BalanceInput = function (_a) {
         React__default["default"].createElement(Flex, { justifyContent: "flex-end" },
             React__default["default"].createElement(Box, null,
                 React__default["default"].createElement(Flex, { alignItems: "center" },
-                    React__default["default"].createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps),
-                        React__default["default"].createElement(React__default["default"].Fragment, null)),
-                    unit && (React__default["default"].createElement(UnitContainer, null,
-                        React__default["default"].createElement(React__default["default"].Fragment, null, unit)))),
-                currencyValue && (React__default["default"].createElement(Text, { fontSize: "12px", textAlign: "right", color: "textSubtle" },
-                    React__default["default"].createElement(React__default["default"].Fragment, null, currencyValue)))),
+                    React__default["default"].createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps)),
+                    unit && React__default["default"].createElement(UnitContainer, null, unit)),
+                currencyValue && (React__default["default"].createElement(Text, { fontSize: "12px", textAlign: "right", color: "textSubtle" }, currencyValue))),
             switchEditingUnits && (React__default["default"].createElement(Flex, { alignItems: "center", pl: "12px" },
                 React__default["default"].createElement(SwitchUnitsButton, { scale: "sm", variant: "text", onClick: switchEditingUnits },
                     React__default["default"].createElement(Icon$x, { color: "textSubtle" })))))));
@@ -1842,10 +1836,8 @@ var Textfield = function (_a) {
         onUserInput(e.target.value);
     };
     return (React__default["default"].createElement(StyledBalanceInput, { isWarning: isWarning },
-        React__default["default"].createElement(Text, { fontSize: "14px" },
-            React__default["default"].createElement(React__default["default"].Fragment, null, label)),
-        React__default["default"].createElement(StyledInput$1, __assign({ value: value, onChange: handleOnChange, placeholder: placeholder, textAlign: "left" }, inputProps),
-            React__default["default"].createElement(React__default["default"].Fragment, null))));
+        React__default["default"].createElement(Text, { fontSize: "14px" }, label),
+        React__default["default"].createElement(StyledInput$1, __assign({ value: value, onChange: handleOnChange, placeholder: placeholder, textAlign: "left" }, inputProps))));
 };
 
 var Separator = styled__default["default"].div(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
@@ -28813,8 +28805,7 @@ var BodyLock = function () {
 var Overlay = function (props) {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(BodyLock, null),
-        React__default["default"].createElement(StyledOverlay, __assign({ role: "presentation" }, props),
-            React__default["default"].createElement(React__default["default"].Fragment, null))));
+        React__default["default"].createElement(StyledOverlay, __assign({ role: "presentation" }, props))));
 };
 var templateObject_1$V;
 
@@ -28895,7 +28886,7 @@ var Card = function (_a) {
     return (React__default["default"].createElement(StyledCard, __assign({}, props),
         React__default["default"].createElement(StyledCardInner, { background: background, hasCustomBorder: !!props.borderBackground },
             ribbon,
-            React__default["default"].createElement(React__default["default"].Fragment, null, children))));
+            children)));
 };
 
 var CardBody = styled__default["default"].div(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
@@ -29058,10 +29049,10 @@ var Dropdown = function (_a) {
     var target = _a.target, _b = _a.position, position = _b === void 0 ? 'bottom' : _b, children = _a.children;
     return (React__default["default"].createElement(Container$1, null,
         target,
-        React__default["default"].createElement(DropdownContent, { position: position },
-            React__default["default"].createElement(React__default["default"].Fragment, null, children))));
+        React__default["default"].createElement(DropdownContent, { position: position }, children)));
 };
 Dropdown.defaultProps = {
+    // eslint-disable-next-line react/default-props-match-prop-types
     position: 'bottom',
 };
 var templateObject_1$M, templateObject_2$q;
@@ -29984,14 +29975,12 @@ var Step = function (_a) {
     var isFirst = index === 0;
     var isLast = index === numberOfSteps - 1;
     return (React__default["default"].createElement(StyledStep, { mb: index < numberOfSteps - 1 ? '16px' : 0 },
-        React__default["default"].createElement(ChildrenLeftWrapper, { isVisible: !isIndexPair },
-            React__default["default"].createElement(React__default["default"].Fragment, null, children)),
+        React__default["default"].createElement(ChildrenLeftWrapper, { isVisible: !isIndexPair }, children),
         React__default["default"].createElement(Wrapper$2, null,
             React__default["default"].createElement(StepNumber, { status: statusFirstPart }, index + 1),
             React__default["default"].createElement(Connector, { "$isFirstStep": isFirst, "$isLastStep": isLast, status: statusFirstPart, "$isFirstPart": true }),
             !isFirst && !isLast && (React__default["default"].createElement(Connector, { "$isFirstStep": isFirst, "$isLastStep": isLast, status: statusSecondPart }))),
-        React__default["default"].createElement(ChildrenRightWrapper, { isVisible: isIndexPair },
-            React__default["default"].createElement(React__default["default"].Fragment, null, children))));
+        React__default["default"].createElement(ChildrenRightWrapper, { isVisible: isIndexPair }, children)));
 };
 var templateObject_1$p, templateObject_2$g, templateObject_3$7, templateObject_4$4, templateObject_5$2, templateObject_6$1, templateObject_7;
 
@@ -30079,24 +30068,20 @@ var BaseMenu = function (_a) {
     var portal = getPortalRoot();
     var renderMenu = portal ? reactDom_1(menu, portal) : menu;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        React__default["default"].createElement(ClickableElementContainer, { ref: setTargetElement, onClick: toggle },
-            React__default["default"].createElement(React__default["default"].Fragment, null, component)),
+        React__default["default"].createElement(ClickableElementContainer, { ref: setTargetElement, onClick: toggle }, component),
         isMenuOpen && renderMenu));
 };
 
 var InlineMenu = function (_a) {
     var children = _a.children, component = _a.component, _b = _a.isOpen, isOpen = _b === void 0 ? false : _b, props = __rest(_a, ["children", "component", "isOpen"]);
     return (React__default["default"].createElement(BaseMenu, { options: { placement: 'bottom' }, component: component, isOpen: isOpen },
-        React__default["default"].createElement(InlineMenuContainer, __assign({}, props),
-            React__default["default"].createElement(React__default["default"].Fragment, null,
-                React__default["default"].createElement(React__default["default"].Fragment, null, children)))));
+        React__default["default"].createElement(InlineMenuContainer, __assign({}, props), children)));
 };
 
 var SubMenu = function (_a) {
     var children = _a.children, component = _a.component, options = _a.options, _b = _a.isOpen, isOpen = _b === void 0 ? false : _b, props = __rest(_a, ["children", "component", "options", "isOpen"]);
     return (React__default["default"].createElement(BaseMenu, { component: component, options: options, isOpen: isOpen },
-        React__default["default"].createElement(SubMenuContainer, __assign({}, props),
-            React__default["default"].createElement(React__default["default"].Fragment, null, children))));
+        React__default["default"].createElement(SubMenuContainer, __assign({}, props), children)));
 };
 
 var MenuContext = React.createContext({ linkComponent: "a" });
@@ -31151,8 +31136,7 @@ var Modal = function (_a) {
                 onBack && React__default["default"].createElement(ModalBackButton, { onBack: onBack }),
                 React__default["default"].createElement(Heading, null, title)),
             !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { onDismiss: onDismiss })),
-        React__default["default"].createElement(ModalBody, { p: bodyPadding },
-            React__default["default"].createElement(React__default["default"].Fragment, null, children))));
+        React__default["default"].createElement(ModalBody, { p: bodyPadding }, children)));
 };
 
 var ModalWrapper = styled__default["default"].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"])), function (_a) {
@@ -31721,21 +31705,17 @@ var Menu$1 = function (_a) {
     return (React__default["default"].createElement(MenuContext.Provider, { value: { linkComponent: linkComponent } },
         React__default["default"].createElement(Wrapper, null,
             React__default["default"].createElement(FixedContainer, { showMenu: showMenu, height: totalTopMenuHeight },
-                banner && (React__default["default"].createElement(TopBannerContainer, { height: topBannerHeight },
-                    React__default["default"].createElement(React__default["default"].Fragment, null, banner))),
+                banner && (React__default["default"].createElement(TopBannerContainer, { height: topBannerHeight }, banner)),
                 React__default["default"].createElement(StyledNav, null,
                     React__default["default"].createElement(Flex, null,
                         React__default["default"].createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : '/' }),
                         !isMobile && (React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" }))),
-                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
-                        React__default["default"].createElement(React__default["default"].Fragment, null, userMenu)))),
+                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" }, userMenu))),
             subLinks && (React__default["default"].createElement(Flex, { justifyContent: "space-around" },
                 React__default["default"].createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: "".concat(totalTopMenuHeight + 1, "px"), activeItem: activeSubItem }),
                 (subLinksMobileOnly === null || subLinksMobileOnly === void 0 ? void 0 : subLinksMobileOnly.length) > 0 && (React__default["default"].createElement(SubMenuItems, { items: subLinksMobileOnly, mt: "".concat(totalTopMenuHeight + 1, "px"), activeItem: activeSubItem, isMobileOnly: true })))),
             React__default["default"].createElement(BodyWrapper, { mt: !subLinks ? "".concat(totalTopMenuHeight + 1, "px") : '0' },
-                React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
-                    React__default["default"].createElement(React__default["default"].Fragment, null,
-                        React__default["default"].createElement(React__default["default"].Fragment, null, children)))),
+                React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu }, children)),
             isMobile && (React__default["default"].createElement(BottomNav, { items: links, activeItem: activeItem, activeSubItem: activeSubItem })))));
 };
 var templateObject_1$6, templateObject_2$3, templateObject_3$1, templateObject_4, templateObject_5, templateObject_6;
@@ -31858,8 +31838,7 @@ var UserMenu = function (_a) {
             React__default["default"].createElement(LabelText, { title: text || account }, text || accountEllipsis),
             React__default["default"].createElement(Icon$1T, { color: "text", width: "24px" })),
         React__default["default"].createElement(Menu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { isOpen: isOpen }),
-            React__default["default"].createElement(Box, { onClick: function () { return setIsOpen(false); } },
-                React__default["default"].createElement(React__default["default"].Fragment, null, children)))));
+            React__default["default"].createElement(Box, { onClick: function () { return setIsOpen(false); } }, children))));
 };
 var templateObject_1$3, templateObject_2, templateObject_3;
 

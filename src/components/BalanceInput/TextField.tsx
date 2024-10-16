@@ -17,18 +17,14 @@ const Textfield: React.FC<TextfieldProps> = ({
 
   return (
     <StyledBalanceInput isWarning={isWarning}>
-      <Text fontSize="14px">
-        <>{label}</>
-      </Text>
+      <Text fontSize="14px">{label}</Text>
       <StyledInput
         value={value}
         onChange={handleOnChange}
         placeholder={placeholder}
         textAlign="left"
         {...inputProps}
-      >
-        <></>
-      </StyledInput>
+      />
     </StyledBalanceInput>
   );
 };

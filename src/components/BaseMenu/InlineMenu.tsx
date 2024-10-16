@@ -16,11 +16,7 @@ const InlineMenu: React.FC<BaseMenuProps & BoxProps> = ({
       component={component}
       isOpen={isOpen}
     >
-      <InlineMenuContainer {...props}>
-        <>
-          <>{children}</>
-        </>
-      </InlineMenuContainer>
+      <InlineMenuContainer {...props}>{children}</InlineMenuContainer>
     </BaseMenu>
   );
 };

@@ -4,6 +4,7 @@ import Button from './Button';
 import IconButton from './IconButton';
 
 interface Props {
+  // eslint-disable-next-line react/require-default-props
   onClick?: () => void;
   expanded?: boolean;
 }
@@ -15,7 +16,7 @@ export const ExpandableButton: React.FC<Props> = ({
 }) => {
   return (
     <IconButton aria-label="Hide or show expandable content" onClick={onClick}>
-      <>{children}</>
+      {children}
       {expanded ? (
         <ChevronUpIcon color="invertedContrast" />
       ) : (
@@ -46,10 +47,11 @@ export const ExpandableLabel: React.FC<Props> = ({
         )
       }
     >
-      <>{children}</>
+      {children}
     </Button>
   );
 };
+
 ExpandableLabel.defaultProps = {
   expanded: false,
 };

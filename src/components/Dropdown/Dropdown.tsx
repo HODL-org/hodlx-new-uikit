@@ -48,13 +48,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <Container>
       {target}
-      <DropdownContent position={position}>
-        <>{children}</>
-      </DropdownContent>
+      <DropdownContent position={position}>{children}</DropdownContent>
     </Container>
   );
 };
 Dropdown.defaultProps = {
+  // eslint-disable-next-line react/default-props-match-prop-types
   position: 'bottom',
 };
 
